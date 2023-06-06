@@ -1,0 +1,61 @@
+{ "ucr": {
+    "input_size": [1],
+    "window_size": [100],
+    "hidden_dim": [80],
+    "num_layers": [3],
+    "dropout_rate": [0.2],
+    "direction": [2]
+  },
+  "smap": {
+    "input_size": ["-"],
+    "window_size": [100],
+    "hidden_dim": [80],
+    "num_layers": [3],
+    "dropout_rate": [0.2],
+    "direction": [2]
+  },
+  "msl": {
+    "input_size": ["-"],
+    "window_size": [50],
+    "hidden_dim": [80],
+    "num_layers": [3],
+    "dropout_rate": [0.2],
+    "direction": [2]
+  },
+  "ecg_5000": {
+    "input_size": [1],
+    "window_size": [140],
+    "hidden_dim": [80],
+    "num_layers": [3],
+    "dropout_rate": [0.2],
+    "direction": [2]
+  },
+  "swat": {
+    "input_size": [51],
+    "window_size": [100],
+    "hidden_dim": [80],
+    "num_layers": [3],
+    "dropout_rate": [0.2],
+    "direction": [2]
+  },
+  "model": {
+    "encoder": ["cpc"],
+    "lr": [0.001],
+    "batch_size": [128, 64, 32, 16, 4,2,1],
+    "epochs": [50],
+    "tcn_kernel_size": [5],
+    "val_percentage": [0.2],
+    "temperature": [0.2],
+    "latent_augmentation": [0],
+    "seed": [42, 24, 18],
+    "spike_scope": ["global"],
+    "spike_lambda": [5],
+    "spike_locality": [5],
+    "noise_lambda":  [0.2],
+    "reset_eps": [0.25],
+    "scale_lambda": [0.8],
+    "transformation_mode": ["all"],
+    "positive_transformation": ["add_noise"],
+    "negative_transformation": ["spike;shuffle;trend;scale"]
+  }
+}
